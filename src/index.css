@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2E7D32;
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-800: #1E293B;
+  --color-emerald-50: #ECFDF5;
+  --color-emerald-100: #D1FAE5;
+  --color-emerald-200: #A7F3D0;
+  --color-emerald-700: #047857;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F3F4F6] text-slate-800 font-sans antialiased;
+  }
+}
+
+/* Reglas de impresión para ticket térmico (58mm) */
+@media print {
+  @page {
+    margin: 0;
+    size: 58mm auto;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-area, #printable-area * {
+    visibility: visible;
+  }
+
+  #printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 58mm;
+    padding: 2mm;
+    background: white;
+    color: black;
+    font-size: 10pt;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Estilos de transición */
+.screen-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}

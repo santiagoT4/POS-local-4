@@ -1,0 +1,6 @@
+{
+  "name": "POS Venta por Peso",
+  "description": "Sistema de Punto de Venta optimizado para negocios de venta por peso con respaldo en la nube y LocalStorage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
